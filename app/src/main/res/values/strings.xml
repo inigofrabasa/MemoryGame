@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Memory Game</string>
+
+    <string name="empty_content_description">…</string>
+    <string name="game_type_dummy">1 x 1</string>
+    <string name="you_win_text">You Win!</string>
+    <string name="memory_game_string">Memory Game</string>
+    <string name="game_string">Game</string>
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="viewModel"
+            type="com.inigofrabasa.memorygame.screens.game.GameViewModel" />
+        <variable
+            name="visibility_win"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.game.GameActivity"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/game_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/game_back_button"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/back_icon"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="@string/empty_content_description"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:text="@string/game_string"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.inigofrabasa.memorygame.widgets.BoardWidget
+            android:id="@+id/board_game"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:gameManager = "@{viewModel.gameManager}"
+            android:layout_below="@+id/game_toolbar"
+        />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/game_toolbar"
+            android:layout_alignParentBottom="true"
+            >
+
+            <LinearLayout
+                android:id="@+id/win_layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:background="@drawable/front_card_background"
+                android:layout_margin="@dimen/win_margin"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                app:viewVisibility="@{visibility_win}"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="40sp"
+                    android:layout_gravity="center"
+                    android:text="@string/you_win_text">
+                </TextView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

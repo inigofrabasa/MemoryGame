@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.inigofrabasa.memorygame.widgets.CardWidget
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        >
+
+        <ImageView
+            android:id="@+id/card_front_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/empty_content_description"
+            />
+
+        <ImageView
+            android:id="@+id/card_back_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cards_back"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/empty_content_description"
+            />
+
+    </com.inigofrabasa.memorygame.widgets.CardWidget>
+</layout>
